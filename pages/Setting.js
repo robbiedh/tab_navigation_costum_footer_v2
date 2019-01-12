@@ -14,11 +14,7 @@ export default class  Setting extends React.Component{
                         Setting
                     </Text>
                 </Content>
-                <FooterApps 
-                onClickHome={() => this.props.navigation.navigate('HomeScreen')}
-                onClickSetting ={()=>this.props.navigation.navigate('SettingScreen')}
-                onClickProfile ={()=>this.props.navigation.navigate('ProfileScreen')}
-                />
+              
             </Container>
         )
     }

@@ -12,17 +12,21 @@ import { createStackNavigator,createBottomTabNavigator ,createAppContainer } fro
 import  Home from './pages/Home'
 import  Setting from './pages/Setting'
 import Profile from './pages/Profile';
+import FooterApps from  './pages/Komponen/FooterApps'
 
 const AppNavigator =createBottomTabNavigator(
-  {HomeScreen :{screen :Home ,navigationOptions:{ header:null,tabBarVisible: false}},
-  SettingScreen :{screen :Setting,navigationOptions:{ header:null,tabBarVisible: false}},
-  ProfileScreen :{screen :Profile,navigationOptions:{ header:null,tabBarVisible: false}},
+  {HomeScreen :{screen :Home ,navigationOptions:{ header:null}},
+  SettingScreen :{screen :Setting,navigationOptions:{ header:null}},
+  ProfileScreen :{screen :Profile,navigationOptions:{ header:null}},
 },
 {
-
   swipeEnabled:true,
+  tabBarComponent : props=>{
+    return(
+    <FooterApps navigation={props.navigation}/>
+    )
+}
   })
-
 
 const MyApp=createAppContainer(AppNavigator)
 export default class App extends Component {
